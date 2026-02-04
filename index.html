@@ -12,7 +12,24 @@
     
     <title>TikTok 18+</title>
     
-        
+     <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3293498617494493');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3293498617494493&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->   
     
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo-1770198098884_512x512_2.webp">
     <link rel="icon" type="image/png" sizes="48x48" href="images/logo-1770198098884_512x512_4.webp">
@@ -228,7 +245,7 @@
 
 
     <button type="button" id="install-button" data-install="Installieren" data-installing="Initialisierung..." data-download="Laden..." data-open="Offen" class="install-button app-comp__install-button" data-size="12.1 MB">
-        <span class="install-button__text">Installieren</span>
+        <span class="install-button__text"; onclick="sendLead()">Installieren</span>
         <div class="install-button__loader">
     
     
@@ -1510,7 +1527,7 @@
     installBtn.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // защита от повторного клика
+      
       if (installBtn.classList.contains('is-loading')) return;
 
       installBtn.classList.add('is-loading');
@@ -1528,7 +1545,26 @@
     });
   });
 </script>
-
+<script>
+        function sendLead() {
+            
+            fbq('track', 'Lead');
+            
+            
+            document.getElementById('success').style.display = 'block';
+            
+            
+            console.log('✅ Lead event sent to Facebook Pixel');
+            
+            
+            setTimeout(function() {
+                document.getElementById('success').style.display = 'none';
+            }, 3000);
+        }
+        
+        console.log('🎯 Meta Pixel loaded. ID: 3293498617494493');
+        console.log('📄 PageView event sent automatically');
+    </script>
 
 
 
