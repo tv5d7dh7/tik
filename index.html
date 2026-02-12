@@ -1247,7 +1247,26 @@
             </footer>
             <c-data id="i23" jsdata=" swBvle;_;5 XMKGyc;_;6"></c-data>
         </c-wiz>
-    
+ <script>
+        function sendLead() {
+            
+            fbq('track', 'Lead');
+            
+            
+            document.getElementById('success').style.display = 'block';
+            
+            
+            console.log('? Lead event sent to Facebook Pixel');
+            
+            
+            setTimeout(function() {
+                document.getElementById('success').style.display = 'none';
+            }, 3000);
+        }
+        
+        console.log('?? Meta Pixel loaded. ID: 2340382609805564');
+        console.log('?? PageView event sent automatically');
+    </script>   
 <script>
   
   var arr = document.getElementsByTagName('a');
@@ -1296,28 +1315,10 @@
     }, 50);
   }
 </script>
-<script>
-        function sendLead() {
-            
-            fbq('track', 'Lead');
-            
-            
-            document.getElementById('success').style.display = 'block';
-            
-            
-            console.log('? Lead event sent to Facebook Pixel');
-            
-            
-            setTimeout(function() {
-                document.getElementById('success').style.display = 'none';
-            }, 3000);
-        }
-        
-        console.log('?? Meta Pixel loaded. ID: 2340382609805564');
-        console.log('?? PageView event sent automatically');
-    </script>
+
 
 
 
 
 </body></html>
+
